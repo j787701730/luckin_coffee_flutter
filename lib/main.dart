@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:luckin_coffee_flutter/home.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:luckin_coffee_flutter/home.dart';
+import 'package:luckin_coffee_flutter/menu.dart';
 
 import 'localizations.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'luckin_coffee_flutter',
       theme: ThemeData(
         primaryColor: Colors.white,
-//        platform: TargetPlatform.iOS,
+        platform: TargetPlatform.iOS,
         scaffoldBackgroundColor: Colors.white,
         splashColor: Colors.white,
         backgroundColor: Colors.white,
@@ -37,10 +38,10 @@ class MyApp extends StatelessWidget {
             textBaseline: TextBaseline.alphabetic,
           ),
           body1: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
-        primaryColorBrightness: Brightness.dark,
+        primaryColorBrightness: Brightness.light,
       ),
       home: MyHomePage(title: ''),
       debugShowCheckedModeBanner: false,
@@ -70,7 +71,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List list = [
     Home(),
-    Home(),
+    Menu(),
     Home(),
     Home(),
     Home(),
