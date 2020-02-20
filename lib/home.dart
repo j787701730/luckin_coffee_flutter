@@ -12,8 +12,16 @@ class _HomeState extends State<Home> {
   List menu = [
     {'chName': '现在下单', 'enName': 'ORDER NOW', 'icon': 'icon_order_now_new.png'},
     {'chName': '咖啡钱包', 'enName': 'COFFRR WALLET', 'icon': 'icon_promo_new.png'},
-    {'chName': '送Ta咖啡', 'enName': 'SEND COFFEE', 'icon': 'icon_send_coffee_new.png'},
-    {'chName': '企业账户', 'enName': 'ENTERPRISE ACCOUNT', 'icon': 'icon_enterprise_new.png'},
+    {
+      'chName': '送Ta咖啡',
+      'enName': 'SEND COFFEE',
+      'icon': 'icon_send_coffee_new.png'
+    },
+    {
+      'chName': '企业账户',
+      'enName': 'ENTERPRISE ACCOUNT',
+      'icon': 'icon_enterprise_new.png'
+    },
   ];
 
   @override
@@ -35,7 +43,8 @@ class _HomeState extends State<Home> {
                 );
               },
               itemCount: 3,
-              pagination: SwiperCustomPagination(builder: (BuildContext context, SwiperPluginConfig config) {
+              pagination: SwiperCustomPagination(
+                  builder: (BuildContext context, SwiperPluginConfig config) {
                 return Container(
                   alignment: Alignment.bottomCenter,
                   margin: EdgeInsets.only(
@@ -43,13 +52,17 @@ class _HomeState extends State<Home> {
                   ),
                   child: Wrap(
                     spacing: 10,
-                    children: List.generate(config.itemCount, (int index) => index).map<Widget>(
+                    children:
+                        List.generate(config.itemCount, (int index) => index)
+                            .map<Widget>(
                       (item) {
                         return Container(
                           width: 10,
                           height: 10,
                           decoration: BoxDecoration(
-                            color: config.activeIndex == item ? Color(0xff90C0EF) : Colors.white,
+                            color: config.activeIndex == item
+                                ? Color(0xff90C0EF)
+                                : Colors.white,
                             borderRadius: BorderRadius.all(
                               Radius.circular(10),
                             ),
@@ -93,7 +106,11 @@ class _HomeState extends State<Home> {
                           ),
                           Text(
                             '距您53m',
-                            style: TextStyle(fontSize: ScreenUtil().setSp(12), color: Color(0xff808080)),
+                            style: TextStyle(
+                              fontSize: ScreenUtil().setSp(12),
+                              color: Color(0xff808080),
+                              height: 1.3,
+                            ),
                           ),
                         ],
                       ),
@@ -187,6 +204,7 @@ class _HomeState extends State<Home> {
                                   style: TextStyle(
                                     fontSize: ScreenUtil().setSp(14),
                                     color: Color(0xff808080),
+                                    height: 1.3,
                                   ),
                                 ),
                               ],
@@ -209,6 +227,9 @@ class _HomeState extends State<Home> {
             padding: EdgeInsets.only(
               left: ScreenUtil().setWidth(24),
               right: ScreenUtil().setWidth(24),
+            ),
+            margin: EdgeInsets.only(
+              bottom: 20,
             ),
             child: Image.asset(
               'assets/bottom_banner.webp',

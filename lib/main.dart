@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 750, height: 1334);
+    ScreenUtil.init(context, width: 375, height: 667);
 
     return WillPopScope(
       onWillPop: () async {
@@ -90,7 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
         );
-        if (_lastPressedAt == null || DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {
+        if (_lastPressedAt == null ||
+            DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {
           // 两次点击间隔超过1秒则重新计时
           _lastPressedAt = DateTime.now();
           return false;
@@ -100,7 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         body: list[_tabIndex],
         bottomNavigationBar: BottomNavigationBar(
-          elevation: 1,
           selectedFontSize: 0,
           unselectedFontSize: 0,
           items: <BottomNavigationBarItem>[
@@ -120,8 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       '首页',
                       style: TextStyle(
-                        fontSize: ScreenUtil().setSp(14),
+                        fontSize: ScreenUtil().setSp(12),
                         color: Color(0xff2b4c7e),
+                        height: 1.3,
                       ),
                     ),
                   ],
@@ -144,8 +145,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       '菜单',
                       style: TextStyle(
-                        fontSize: ScreenUtil().setSp(14),
+                        fontSize: ScreenUtil().setSp(12),
                         color: Color(0xff2b4c7e),
+                        height: 1.3,
                       ),
                     ),
                   ],
@@ -168,8 +170,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       '订单',
                       style: TextStyle(
-                        fontSize: ScreenUtil().setSp(14),
+                        fontSize: ScreenUtil().setSp(12),
                         color: Color(0xff2b4c7e),
+                        height: 1.3,
                       ),
                     ),
                   ],
@@ -192,8 +195,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       '购物车',
                       style: TextStyle(
-                        fontSize: ScreenUtil().setSp(14),
+                        fontSize: ScreenUtil().setSp(12),
                         color: Color(0xff2b4c7e),
+                        height: 1.3,
                       ),
                     ),
                   ],
@@ -216,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       '我的',
                       style: TextStyle(
-                        fontSize: ScreenUtil().setSp(14),
+                        fontSize: ScreenUtil().setSp(12),
                         color: Color(0xff2b4c7e),
                       ),
                     ),
